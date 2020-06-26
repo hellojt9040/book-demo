@@ -1,0 +1,66 @@
+<div class="main-container container-fluid h-100 w-100 p-0">
+  <div class="row my-nav">
+    <div class="col-12">
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="#">
+          <img src="../../../assets/images/helloJT.png" alt="Logo" style="width:40px;"/>
+          <span> My Books  </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto font-weight-bolder">
+            <li class="nav-item">
+              <a class="nav-link d-flex justify-content-end" routerLink="/root">
+                <span>
+                  Shop
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex justify-content-end" href="#">
+                <span>
+                  About
+                </span>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link d-flex justify-content-end" href="#">
+                <span>
+                  Contact
+                </span>
+              </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link d-flex justify-content-end" href="#">
+                <span>
+                  <img src="../../../assets/images/icons8-instagram-20.png" alt="">
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex justify-content-end" href="#">
+                <span>
+                  <img src="../../../assets/images/icons8-facebook-old-20.png" alt="">
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+     </div>
+  </div>
+
+  <div class="mt-6 text-light col-4 small-screen text-wrap" >
+    <p @fade>There's still a magic smell left between the pages of a book</p>
+  </div>
+
+  <div class="get-in-button" [@bounceInDownOnEnter]="{ value: '', params: { delay: 1000 } }" [@slideOutRightOnLeave] >
+    <div class="example-button-container d-flex justify-content-center">
+      <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+        <mat-icon routerLink="/root">arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

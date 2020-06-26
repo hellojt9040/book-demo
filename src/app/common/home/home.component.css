@@ -1,0 +1,33 @@
+.main-container {
+  /* The image used */
+  background-image: url("../../../assets/images/photography-of-book-page-1029141.jpg");
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.small-screen {
+  top: 4rem;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.get-in-button{
+  position: absolute;
+    bottom: 4rem;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .small-screen {
+    font-size: 2rem;
+    line-height: 2rem;
+    width: 50%;
+    position: absolute;
+    top: 6rem;
+  }
+}

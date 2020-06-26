@@ -1,0 +1,210 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a href="#">Category</a>
+  <a href="#">Me</a>
+  <a href="#">My Orders</a>
+  <a href="#">Wishlist</a>
+  <a href="#">Help</a>
+</div>
+
+<div class="container-fluid px-0">
+
+  <div class="">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../../../assets/images/la.jpg" alt="Los Angeles" width="1100" height="500">
+        </div>
+        <div class="carousel-item">
+          <img src="../../../assets/images/chicago.jpg" alt="Chicago" width="1100" height="500">
+        </div>
+        <div class="carousel-item">
+          <img src="../../../assets/images/ny.jpg" alt="New York" width="1100" height="500">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="root-nav mx-auto row col-12 mat-elevation-z6">
+    <div class="col-9 mx-auto d-flex justify-content-between full-width sticky-top" style="background-color: #6a93a757;">
+      <div class="">
+        <a class="text-white" href="">
+          <img src="../../../assets/images/helloJT.png" alt="Logo" style="width:40px;"/>
+          <span> My Books  </span>
+        </a>
+      </div>
+
+
+      <div>
+        <div class="d-flex" *ngIf="!hideNavigation">
+          <div class="text-center text-white">
+            <button mat-button>
+              <mat-icon routerLink="/root">search</mat-icon>
+            </button>
+          </div>
+
+          <div class="text-center text-white">
+            <button mat-button [matMenuTriggerFor]="animals">Category</button>
+            <mat-menu #animals="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+              <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+            </mat-menu>
+
+            <mat-menu #vertebrates="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+              <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+              <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+              <button mat-menu-item>Birds</button>
+              <button mat-menu-item>Mammals</button>
+            </mat-menu>
+
+            <mat-menu #invertebrates="matMenu">
+              <button mat-menu-item>Insects</button>
+              <button mat-menu-item>Molluscs</button>
+              <button mat-menu-item>Crustaceans</button>
+              <button mat-menu-item>Corals</button>
+              <button mat-menu-item>Arachnids</button>
+              <button mat-menu-item>Velvet worms</button>
+              <button mat-menu-item>Horseshoe crabs</button>
+            </mat-menu>
+
+            <mat-menu #fish="matMenu">
+              <button mat-menu-item>Baikal oilfish</button>
+              <button mat-menu-item>Bala shark</button>
+              <button mat-menu-item>Ballan wrasse</button>
+              <button mat-menu-item>Bamboo shark</button>
+              <button mat-menu-item>Banded killifish</button>
+            </mat-menu>
+
+            <mat-menu #amphibians="matMenu">
+              <button mat-menu-item>Sonoran desert toad</button>
+              <button mat-menu-item>Western toad</button>
+              <button mat-menu-item>Arroyo toad</button>
+              <button mat-menu-item>Yosemite toad</button>
+            </mat-menu>
+
+            <mat-menu #reptiles="matMenu">
+              <button mat-menu-item>Banded Day Gecko</button>
+              <button mat-menu-item>Banded Gila Monster</button>
+              <button mat-menu-item>Black Tree Monitor</button>
+              <button mat-menu-item>Blue Spiny Lizard</button>
+              <button mat-menu-item disabled>Velociraptor</button>
+            </mat-menu>
+          </div>
+
+
+
+          <!-- <div class="text-white">
+            <button mat-button>Category</button>
+          </div> -->
+          <div class="text-center text-white">
+            <button mat-button>
+              <mat-icon routerLink="/root">shopping_cart</mat-icon>
+            </button>
+          </div>
+          <div class="text-center text-white">
+            <button mat-button>
+              <mat-icon routerLink="/root">person</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="hideNavigation" class="d-flex flex-wrap">
+          <div class="text-center text-white">
+            <button mat-button class="px-0">
+              <mat-icon routerLink="/root">search</mat-icon>
+            </button>
+          </div>
+          <div class="text-center text-white">
+            <button mat-button class="px-0">
+              <mat-icon routerLink="/root">shopping_cart</mat-icon>
+            </button>
+          <button mat-button class="px-0" (click)="openNav()">
+            <mat-icon class="text-white">menu_open</mat-icon>
+          </button>
+        </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-9 mx-auto d-flex text-white root-contents full-width">
+      <mat-card class="col-12">
+        <div class="d-flex justify-content-between mx-auto">
+          <div class="d-flex flex-wrap justify-content-center flex-coulmn col">
+            <div class="d-flex flex-column">
+              <img src="../../../assets/images/icons8-elective-64.png" alt="">
+              <span class="text-center">Categories</span>
+            </div>
+
+          </div>
+          <div class="d-flex flex-wrap justify-content-center flex-coulmn col">
+            <div class="d-flex flex-column">
+              <img src="../../../assets/images/icons8-books-64.png" alt="">
+              <span class="text-center">All</span>
+            </div>
+
+          </div>
+          <div class="d-flex flex-wrap justify-content-center flex-coulmn col">
+            <div class="d-flex flex-column">
+              <img src="../../../assets/images/icons8-voucher-64.png" alt="">
+              <span class="text-center">Offers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between flex-wrap my-4">
+          <div class="d-flex flex-wrap mx-auto">
+            <mat-card>
+              <img class="m-1" src="../../../assets/images/jph1.jpg" alt="">
+            </mat-card>
+            <mat-card>
+              <img class="m-1" src="../../../assets/images/jph1.jpg" alt="">
+            </mat-card>
+          </div>
+          <div class="d-flex flex-wrap mx-auto">
+            <mat-card>
+              <img class="m-1" src="../../../assets/images/jph1.jpg" alt="">
+            </mat-card>
+            <mat-card>
+              <img class="m-1" src="../../../assets/images/jph1.jpg" alt="">
+            </mat-card>
+          </div>
+
+        </div>
+
+        <div class="mt-5">
+          <div class="bg-warning style-slim-bar"></div>
+          <div class="display-4">
+            Why Us ?
+          </div>
+          <blockquote class="blockquote mt-3">
+            <p>There's still a magic smell left between the pages of a book. For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+            <footer class="blockquote-footer">Pappu Gang</footer>
+          </blockquote>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-9 mx-auto  d-flex text-white fixed-bottom full-width">
+      <div class="footer mx-auto text-muted ">
+        Copy Right @ PappuGang.com
+      </div>
+    </div>
+  </div>
+</div>
+

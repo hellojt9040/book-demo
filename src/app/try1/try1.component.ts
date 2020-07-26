@@ -43,7 +43,7 @@ export class Try1Component implements OnInit {
   slidesStore = [
     {
       id:1,
-      src:'../assets/images/jph_1.jpg',
+      src:'./assets/images/jph_1.jpg',
       alt:'Image_1',
       title:'Image_1',
       description : 'Mathematics 3',
@@ -51,7 +51,7 @@ export class Try1Component implements OnInit {
     },
     {
       id:2,
-      src:'../assets/images/jph_2.jpg',
+      src:'./assets/images/jph_2.jpg',
       alt:'Image_2',
       title:'Image_3',
       description : 'Physics 3',
@@ -59,7 +59,7 @@ export class Try1Component implements OnInit {
     },
     {
       id:3,
-      src:'../assets/images/jph_3.jpg',
+      src:'./assets/images/jph_3.jpg',
       alt:'Image_3',
       title:'Image_3',
       description : 'Chemistry 3',
@@ -67,7 +67,7 @@ export class Try1Component implements OnInit {
     },
     {
       id:4,
-      src:'../assets/images/jph_4.jpg',
+      src:'./assets/images/jph_4.jpg',
       alt:'Image_4',
       title:'Image_4',
       description : 'Artificial Inteligence',
@@ -75,7 +75,7 @@ export class Try1Component implements OnInit {
     },
     {
       id:5,
-      src:'../assets/images/jph_5.jpg',
+      src:'./assets/images/jph_5.jpg',
       alt:'Image_5',
       title:'Image_5',
       description : 'Data Stucture',
@@ -83,7 +83,7 @@ export class Try1Component implements OnInit {
     },
     {
       id:6,
-      src:'../assets/images/jph_6.jpg',
+      src:'./assets/images/jph_6.jpg',
       alt:'Image_6',
       title:'Image_6',
       description : 'c++',
@@ -91,7 +91,7 @@ export class Try1Component implements OnInit {
     },
     {
       id:7,
-      src:'../assets/images/jph_1.jpg',
+      src:'./assets/images/jph_1.jpg',
       alt:'Image_7',
       title:'Image_7',
       description : 'Core Java',

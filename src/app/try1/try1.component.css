@@ -1,0 +1,37 @@
+.carousal-height{
+  height: 16rem;
+}
+
+.product-card{
+  height: 15rem;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 3.5px 10px rgba(0, 0, 0, 0.06),
+  0 6.8px 14.4px #116d68d9
+  ;
+
+}
+
+.h-70{
+  height: 70%;
+}
+
+.h-30{
+  height: 30%;
+}
+
+.des-title{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: #007b74;
+  font-size: 1rem;
+}
+
+.des-body{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.add-cart-icon{
+  color: #007b74;
+}

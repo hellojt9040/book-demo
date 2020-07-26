@@ -1,0 +1,59 @@
+
+<!-- <owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide>
+      <div class="slide">
+          <img src="https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg">
+      </div>
+  </ng-template>
+  <ng-template carouselSlide>
+      <div class="slide">
+          <img src="https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg">
+      </div>
+  </ng-template>
+  <ng-template carouselSlide>
+      <div class="slide">
+          <img src="https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg">
+      </div>
+  </ng-template>
+  <ng-template carouselSlide>
+      <div class="slide">
+          <img src="https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg">
+      </div>
+  </ng-template>
+  <ng-template carouselSlide>
+      <div class="slide">
+          <img src="https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg">
+      </div>
+  </ng-template>
+</owl-carousel-o> -->
+
+<owl-carousel-o [options]="customOptions">
+  <div></div>
+  <ng-template carouselSlide [width]="200" *ngFor="let slide of slidesStore" [id]="slide.id" >
+    <div class="carousal-height">
+      <mat-card class="product-card p-0">
+        <div class="h-70">
+          <img class="h-100" [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+        </div>
+        <div class="h-30 d-flex justify-content-between flex-wrap py-2">
+          <div class="pl-1">
+            <p class="des-title">
+              {{slide.description}}
+            </p>
+            <p class="des-body">
+              {{slide.sem}}
+            </p>
+          </div>
+          <div class="pr-1 mb-auto">
+            <!-- <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon"> -->
+              <mat-icon class="add-cart-icon">add_circle</mat-icon>
+            <!-- </button> -->
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+
+  </ng-template>
+
+</owl-carousel-o>

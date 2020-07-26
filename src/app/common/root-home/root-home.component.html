@@ -43,25 +43,34 @@
   </div>
 
   <div class="root-nav mx-auto row col-12 mat-elevation-z6">
-    <div class="col-9 mx-auto d-flex justify-content-between full-width sticky-top" style="background-color: #6a93a757;">
-      <div class="">
-        <a class="text-white" href="">
+    <div class="col-9 mx-auto d-flex justify-content-between full-width sticky-top" style="background-image: linear-gradient(to right,#094e53a6, #041f1e, #094e53a6);">
+      <div class="col">
+        <a class="text-white d-flex flex-wrap" href="">
           <img src="./assets/images/helloJT.png" alt="Logo" style="width:40px;"/>
-          <span> My Books  </span>
+          <div class="text-header row ml-2">
+            <p class="my-auto">
+              My Books
+            </p></div>
         </a>
       </div>
 
-
-      <div>
-        <div class="d-flex" *ngIf="!hideNavigation">
-          <div class="text-center text-white">
-            <button mat-button>
-              <mat-icon routerLink="/root">search</mat-icon>
-            </button>
+      <div class="text-center text-white col d-flex justify-content-center">
+        <button mat-button data-toggle="collapse" data-target="#search_bar">
+          <mat-icon routerLink="/root" class="text-header search-hover">search</mat-icon>
+        </button>
+        <div id="search_bar" class="collapse search-bar-open">
+          <input id="search" type="text" autocomplete="off" placeholder="Type Keywords">
+          <div class="icon-wrap">
+            <mat-icon routerLink="/root" class="text-header mx-auto">search</mat-icon>
           </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="d-flex justify-content-center" *ngIf="!hideNavigation">
 
           <div class="text-center text-white">
-            <button mat-button [matMenuTriggerFor]="animals">Category</button>
+            <button mat-button [matMenuTriggerFor]="animals" class="text-header">Category</button>
             <mat-menu #animals="matMenu">
               <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
               <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
@@ -116,12 +125,12 @@
           </div> -->
           <div class="text-center text-white">
             <button mat-button>
-              <mat-icon routerLink="/root">shopping_cart</mat-icon>
+              <mat-icon routerLink="/root" class="text-header">shopping_cart</mat-icon>
             </button>
           </div>
           <div class="text-center text-white">
             <button mat-button>
-              <mat-icon routerLink="/root">person</mat-icon>
+              <mat-icon routerLink="/root" class="text-header">person</mat-icon>
             </button>
           </div>
         </div>
@@ -144,8 +153,8 @@
       </div>
     </div>
     <div class="col-9 mx-auto d-flex text-white root-contents full-width">
-      <mat-card class="col-12">
-        <div class="d-flex justify-content-between mx-auto">
+      <mat-card class="col-12 px-0">
+        <div class="d-flex justify-content-between mx-auto shadow py-2 rounded-lg">
           <div class="d-flex flex-wrap justify-content-center flex-coulmn col">
             <div class="d-flex flex-column">
               <img src="./assets/images/icons8-elective-64.png" alt="">
@@ -153,7 +162,7 @@
             </div>
 
           </div>
-          <div class="d-flex flex-wrap justify-content-center flex-coulmn col">
+          <div class="d-flex flex-wrap justify-content-center flex-coulmn col side-borders">
             <div class="d-flex flex-column">
               <img src="./assets/images/icons8-books-64.png" alt="">
               <span class="text-center">All</span>
@@ -168,43 +177,275 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-between flex-wrap my-4">
-          <div class="d-flex flex-wrap mx-auto">
-            <mat-card>
-              <img class="m-1" src="./assets/images/jph1.jpg" alt="">
-            </mat-card>
-            <mat-card>
-              <img class="m-1" src="./assets/images/jph1.jpg" alt="">
-            </mat-card>
+        <div class="my-5 mx-2">
+          <div >
+            <p class="slider-title font-weight-bold">Choose by Semester</p>
           </div>
-          <div class="d-flex flex-wrap mx-auto">
-            <mat-card>
-              <img class="m-1" src="./assets/images/jph1.jpg" alt="">
-            </mat-card>
-            <mat-card>
-              <img class="m-1" src="./assets/images/jph1.jpg" alt="">
-            </mat-card>
-          </div>
-
+          <app-try1></app-try1>
         </div>
 
-        <div class="mt-5">
-          <div class="bg-warning style-slim-bar"></div>
-          <div class="display-4">
-            Why Us ?
+        <div class="my-4 mx-2">
+          <div >
+            <p class="slider-title font-weight-bold">Choose by Publication</p>
           </div>
-          <blockquote class="blockquote mt-3">
-            <p>There's still a magic smell left between the pages of a book. For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
-            <footer class="blockquote-footer">Pappu Gang</footer>
-          </blockquote>
+          <app-try1></app-try1>
         </div>
+
+        <div class="view intro jarallax"
+          style="background-image: url(../../../assets/images/stock-photo-question-mark-icon-isolated-on-special-blue-banner-background-abstract-illustration-1150782911.jpg); background-attachment: fixed; min-height: 700px">
+        <div class="full-bg-img mask rgba-purple-slight">
+          <div class="container">
+            <div class="d-flex align-items-center d-flex justify-content-start" style="height: 700px">
+              <div class="row mt-5">
+                <div class="col-md-12 text-break mb-3">
+                  <div class="">
+                    <h1 class="font-weight-bold bold-header mb-4 " [@bounceInDownOnEnter]="{ value: '', params: { delay: 5000 } }">Last minute preparation <span style="font-size: 4rem; color: #ffc107 !important;">&#xbf;</span></h1>
+                    <h4 class="my-3" style="color: #ffc107; font-size: 2rem;">No worries !!</h4>
+                    <p class="mt-5" style="color: #ffc107;font-size: 2rem;line-height: 2.5rem;">
+                      Let's Insta order, get delivered by
+                      <span style="color: red;font-size: 3rem;">End of Day</span>
+                    </p>
+                      <div class="row">
+                        <span class="mx-auto">
+                          <mat-icon class="let-go-button">play_circle_outline</mat-icon>
+                        </span>
+                      </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="view intro jarallax jarallax-background"
+          style="background-image: url(./assets/images/twenty-1173246_1920.jpg);">
+        <div class="h-100 d-flex justify-content-around flex-column flex-wrap">
+          <div class="col-4 py-4 text-break text-white font-weight-bold" style="font-size: 4rem;line-height: 7rem;">
+            <p>Make A Bulk Order</p>
+          </div>
+          <div class="pl-2 text-white font-weight-bold" style="font-size: xxx-large;">
+            <p>And caskback is yours</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="view intro jarallax" style="background-image: none; z-index: 0; min-height: 700px;">
+        <div class="full-bg-img mask rgba-white-light">
+          <div class="container flex-center">
+            <div class="row mt-5 py-5">
+              <div class="col-md-12 wow fadeIn mb-3" style="animation-name: none; visibility: visible;">
+                <div class="text-center">
+                  <h2 class="h1 display-2 mb-2">ANNA'S </h2>
+                  <h5 class="font-up mb-3 mt-1 font-bold wow fadeInDown" data-wow-delay="0.4s">Interior designer &
+                    Nature
+                    lover</h5>
+                  <a mdbBtn color="elegant" size="lg" class="wow fadeInDown waves-effect waves-light" mdbWavesEffect
+                    data-wow-delay="0.4s">portfolio</a>
+                  <a mdbBtn color="white" outline="true" size="lg" class="wow fadeInDown waves-effect waves-light"
+                    mdbWavesEffect data-wow-delay="0.4s">About me</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-12 text-center my-5">
+            <h2 class="h1 font-bold grey-text mb-5">Lorem ipsum dolor sit amet, consectetur quis elit.</h2>
+            <p align="justify">Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro, cumque
+              provident
+              rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet, veritatis
+              cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
+              cumque
+              provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
+              veritatis
+              cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
+              cumque
+              provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
+              veritatis
+              cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
+              cumque
+              provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
+              veritatis
+              cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
+              cumque
+              provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
+              veritatis
+              cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
+              cumque
+              provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
+              veritatis
+              cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
+              cumque
+              provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
+              veritatis
+              cupiditate reprehenderit.Lorem ipsum dolor sit amet, consectetur quis elit. Perspiciatis commodi porro,
+              cumque
+              provident rem corporis odit, ut quas dolores maxime nesciunt possimus quis, soluta velit debitis amet,
+              veritatis
+              cupiditate reprehenderit.</p>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+
+
+
+
+
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-12 my-5">
+            <div class="">
+              <div class="bg-warning style-slim-bar"></div>
+              <div class="display-4 why-us">
+                Why Us ?
+              </div>
+              <blockquote class="blockquote mt-3 why-us-content text-white">
+                <p>There's still a magic smell left between the pages of a book. For 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.</p>
+                <footer class="blockquote-footer">Pappu Gang</footer>
+              </blockquote>
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+
+
+        <!-- Footer -->
+        <footer class="page-footer font-small indigo">
+
+          <!-- Footer Links -->
+          <div class="container">
+
+            <!-- Grid row-->
+            <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+              <!-- Grid column -->
+              <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold font-2">
+                  <a href="#!">About us</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold font-2">
+                  <a href="#!">Products</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold font-2">
+                  <a href="#!">Awards</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold font-2">
+                  <a href="#!">Help</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold font-2">
+                  <a href="#!">Contact</a>
+                </h6>
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+            <hr class="rgba-white-light" style="margin: 0 15%;">
+
+            <!-- Grid row-->
+            <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+              <!-- Grid column -->
+              <div class="col-md-8 col-12 mt-5">
+                <p style="line-height: 1.7rem" class="footer-para">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem
+                  aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                  explicabo.
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+            <hr class="" style="margin: 10% 15% 5%; border-top: 1px solid #116d9091 !important;">
+
+            <!-- Grid row-->
+            <div class="row pb-3">
+
+              <!-- Grid column -->
+              <div class="col-md-12">
+
+                <div class="mb-5 d-flex justify-content-around footer-social">
+
+                  <!-- Facebook -->
+                  <a class="ic">
+                    <img src="./assets/images/icons8-facebook_200_footer.png" alt="">
+                  </a>
+                  <!-- Twitter -->
+                  <a class="ic">
+                    <img src="./assets/images/icons8-instagram_200_footer.png" alt="">
+                  </a>
+                  <!-- Google +-->
+                  <a class="ic">
+                    <img src="./assets/images/icons8-linkedin_200_footer.png" alt="">
+                  </a>
+                  <!--Linkedin -->
+                  <a class="ic">
+                    <img src="./assets/images/icons8-github_200_footer.png" alt="">
+                  </a>
+                  <!--Instagram-->
+                  <a class="ic">
+                    <img src="./assets/images/icons8-google-plus-circled_100_footer.png" alt="">
+                  </a>
+
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+          </div>
+          <!-- Footer Links -->
+
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+          </div>
+          <!-- Copyright -->
+
+        </footer>
+<!-- Footer -->
       </mat-card>
     </div>
-    <div class="col-9 mx-auto  d-flex text-white fixed-bottom full-width">
+    <!-- <div class="col-9 mx-auto  d-flex text-white fixed-bottom full-width">
       <div class="footer mx-auto text-muted ">
         Copy Right @ PappuGang.com
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
-

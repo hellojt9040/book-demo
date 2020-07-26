@@ -24,10 +24,18 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/jarallax/dist/jarallax.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jarallax/dist/jarallax.min.js",
+              "node_modules/jarallax/dist/jarallax-element.min.js",
+              "node_modules/jarallax/dist/jarallax-video.min.js",
+              "./node_modules/jquery/dist/jquery.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -33,21 +33,22 @@
     <div class="carousal-height">
       <mat-card class="product-card p-0">
         <div class="h-70">
+          <mat-icon mat-raised-button matTooltipClass="tooltip-green"
+          matTooltip="Wishlist this" class="wish-list-icon">turned_in</mat-icon>
           <img class="h-100" [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
         </div>
-        <div class="h-30 d-flex justify-content-between flex-wrap py-2">
-          <div class="pl-1">
-            <p class="des-title">
+        <div class="h-30 d-flex justify-content-between flex-wrap py-1">
+          <div class="pl-1 d-flex flex-column justify-content-between flex-wrap col-6">
+            <p class="des-title mb-1">
               {{slide.description}}
             </p>
-            <p class="des-body">
-              {{slide.sem}}
+            <p class="des-body mb-1">
+              <mat-icon class="add-cart-icon">add_circle</mat-icon>
             </p>
           </div>
-          <div class="pr-1 mb-auto">
-            <!-- <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon"> -->
-              <mat-icon class="add-cart-icon">add_circle</mat-icon>
-            <!-- </button> -->
+          <div class="pr-1 col-6 ">
+            {{slide.sem}}
+
           </div>
         </div>
       </mat-card>

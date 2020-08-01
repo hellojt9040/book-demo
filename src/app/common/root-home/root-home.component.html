@@ -33,18 +33,18 @@
       </div>
 
       <!-- Left and right controls -->
-      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <a class="carousel-control-prev no-small-display" *ngIf="!mobView" href="#demo" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>
       </a>
-      <a class="carousel-control-next" href="#demo" data-slide="next">
+      <a class="carousel-control-next no-small-display" *ngIf="!mobView" href="#demo" data-slide="next">
         <span class="carousel-control-next-icon"></span>
       </a>
     </div>
   </div>
 
   <div class="root-nav mx-auto row col-12 mat-elevation-z6">
-    <div class="col-9 mx-auto d-flex justify-content-between full-width sticky-top" style="background-image: linear-gradient(to right,#094e53a6, #041f1e, #094e53a6);">
-      <div class="col">
+    <div class="col-sm-9 mx-auto d-flex justify-content-between sticky-top" [class.flex-column]="mobView" style="background-image: linear-gradient(to right,#094e53a6, #041f1e, #094e53a6);">
+      <div class="col py-1">
         <a class="text-white d-flex flex-wrap" href="">
           <img src="./assets/images/helloJT.png" alt="Logo" style="width:40px;"/>
           <div class="text-header row ml-2">
@@ -54,78 +54,31 @@
         </a>
       </div>
 
-      <div class="text-center text-white col d-flex justify-content-center">
+      <div class="text-center text-white col d-flex justify-content-center" *ngIf="!mobView">
         <button mat-button data-toggle="collapse" data-target="#search_bar">
-          <mat-icon routerLink="/root" class="text-header search-hover">search</mat-icon>
+          <mat-icon class="text-header search-hover">search</mat-icon>
         </button>
         <div id="search_bar" class="collapse search-bar-open">
           <input id="search" type="text" autocomplete="off" placeholder="Type Keywords">
           <div class="icon-wrap">
-            <mat-icon routerLink="/root" class="text-header mx-auto">search</mat-icon>
+            <mat-icon class="text-header mx-auto">search</mat-icon>
           </div>
         </div>
       </div>
 
-      <div class="col">
-        <div class="d-flex justify-content-center" *ngIf="!hideNavigation">
-
-          <div class="text-center text-white">
-            <button mat-button [matMenuTriggerFor]="animals" class="text-header">Category</button>
-            <mat-menu #animals="matMenu">
-              <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-              <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-            </mat-menu>
-
-            <mat-menu #vertebrates="matMenu">
-              <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-              <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
-              <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
-              <button mat-menu-item>Birds</button>
-              <button mat-menu-item>Mammals</button>
-            </mat-menu>
-
-            <mat-menu #invertebrates="matMenu">
-              <button mat-menu-item>Insects</button>
-              <button mat-menu-item>Molluscs</button>
-              <button mat-menu-item>Crustaceans</button>
-              <button mat-menu-item>Corals</button>
-              <button mat-menu-item>Arachnids</button>
-              <button mat-menu-item>Velvet worms</button>
-              <button mat-menu-item>Horseshoe crabs</button>
-            </mat-menu>
-
-            <mat-menu #fish="matMenu">
-              <button mat-menu-item>Baikal oilfish</button>
-              <button mat-menu-item>Bala shark</button>
-              <button mat-menu-item>Ballan wrasse</button>
-              <button mat-menu-item>Bamboo shark</button>
-              <button mat-menu-item>Banded killifish</button>
-            </mat-menu>
-
-            <mat-menu #amphibians="matMenu">
-              <button mat-menu-item>Sonoran desert toad</button>
-              <button mat-menu-item>Western toad</button>
-              <button mat-menu-item>Arroyo toad</button>
-              <button mat-menu-item>Yosemite toad</button>
-            </mat-menu>
-
-            <mat-menu #reptiles="matMenu">
-              <button mat-menu-item>Banded Day Gecko</button>
-              <button mat-menu-item>Banded Gila Monster</button>
-              <button mat-menu-item>Black Tree Monitor</button>
-              <button mat-menu-item>Blue Spiny Lizard</button>
-              <button mat-menu-item disabled>Velociraptor</button>
-            </mat-menu>
-          </div>
-
-
-
-          <!-- <div class="text-white">
-            <button mat-button>Category</button>
-          </div> -->
+      <div class="col py-1">
+        <div class="d-flex justify-content-center" *ngIf="!mobView">
           <div class="text-center text-white">
             <button mat-button>
-              <mat-icon routerLink="/root" class="text-header">shopping_cart</mat-icon>
+              <mat-icon matBadge="15" matBadgeColor="warn" mat-raised-button matTooltipClass="tooltip-green"
+                        matTooltip="My wishlist" class="text-header">
+                        turned_in
+              </mat-icon>
+            </button>
+          </div>
+          <div class="text-center">
+            <button mat-button>
+              <mat-icon matBadge="15" matBadgeColor="warn" routerLink="/root" class="text-header">shopping_cart</mat-icon>
             </button>
           </div>
           <div class="text-center text-white">
@@ -134,25 +87,35 @@
             </button>
           </div>
         </div>
-        <div *ngIf="hideNavigation" class="d-flex flex-wrap">
-          <div class="text-center text-white">
-            <button mat-button class="px-0">
+        <div *ngIf="mobView" class="my-1">
+          <!-- <div class="text-center text-white">
+
+          </div> -->
+          <div class="d-flex justify-content-around ">
+            <button mat-button class="px-0 text-header">
+              <mat-icon>shopping_cart</mat-icon>
+            </button>
+            <!-- <button mat-button class="px-0">
               <mat-icon routerLink="/root">search</mat-icon>
+            </button> -->
+            <button mat-button class="px-0" data-toggle="collapse" data-target="#search_bar">
+              <mat-icon class="text-header search-hover">search</mat-icon>
             </button>
-          </div>
-          <div class="text-center text-white">
-            <button mat-button class="px-0">
-              <mat-icon routerLink="/root">shopping_cart</mat-icon>
-            </button>
+            <div id="search_bar" class="collapse search-bar-open w-100">
+              <input id="search" type="text" autocomplete="off" placeholder="Type Keywords">
+              <div class="icon-wrap">
+                <mat-icon class="text-header mx-auto">search</mat-icon>
+              </div>
+            </div>
           <button mat-button class="px-0" (click)="openNav()">
-            <mat-icon class="text-white">menu_open</mat-icon>
+            <mat-icon class="text-header">menu_open</mat-icon>
           </button>
         </div>
         </div>
 
       </div>
     </div>
-    <div class="col-9 mx-auto d-flex text-white root-contents full-width">
+    <div class="col-sm-9 mx-auto d-flex text-white root-contents ">
       <mat-card class="col-12 px-0">
         <div class="d-flex justify-content-between mx-auto shadow py-2 rounded-lg">
           <div class="d-flex flex-wrap justify-content-center flex-coulmn col">
@@ -203,10 +166,10 @@
                     <h4 class="my-3" style="color: #ffc107; font-size: 2rem;">No worries !!</h4>
                     <p class="mt-5" style="color: #ffc107;font-size: 2rem;line-height: 2.5rem;">
                       Let's Insta order, get delivered by
-                      <span style="color: red;font-size: 3rem;">End of Day</span>
+                      <span class="font-weight-bold bold-header" style="color: red;font-size: 3rem;">End of Day</span>
                     </p>
                       <div class="row">
-                        <span class="mx-auto">
+                        <span class="mx-auto" style="width: 4rem;">
                           <mat-icon class="let-go-button">play_circle_outline</mat-icon>
                         </span>
                       </div>
@@ -222,10 +185,10 @@
       <div class="view intro jarallax jarallax-background"
           style="background-image: url(./assets/images/twenty-1173246_1920.jpg);">
         <div class="h-100 d-flex justify-content-around flex-column flex-wrap">
-          <div class="col-4 py-4 text-break text-white font-weight-bold" style="font-size: 4rem;line-height: 7rem;">
+          <div class="col-sm-3 py-4 text-md-break text-white font-weight-bold" style="font-size: 4rem;line-height: 9rem;">
             <p>Make A Bulk Order</p>
           </div>
-          <div class="pl-2 text-white font-weight-bold" style="font-size: xxx-large;">
+          <div class="pl-2 font-weight-bold bold-header" style="font-size: xxx-large;line-height: 3rem;">
             <p>And caskback is yours</p>
           </div>
         </div>
@@ -324,61 +287,36 @@
 
         <!-- Footer -->
         <footer class="page-footer font-small indigo">
-
-          <!-- Footer Links -->
           <div class="container">
-
-            <!-- Grid row-->
             <div class="row text-center d-flex justify-content-center pt-5 mb-3">
-
-              <!-- Grid column -->
               <div class="col-md-2 mb-3">
                 <h6 class="text-uppercase font-weight-bold font-2">
                   <a href="#!">About us</a>
                 </h6>
               </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
               <div class="col-md-2 mb-3">
                 <h6 class="text-uppercase font-weight-bold font-2">
                   <a href="#!">Products</a>
                 </h6>
               </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
               <div class="col-md-2 mb-3">
                 <h6 class="text-uppercase font-weight-bold font-2">
                   <a href="#!">Awards</a>
                 </h6>
               </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
               <div class="col-md-2 mb-3">
                 <h6 class="text-uppercase font-weight-bold font-2">
                   <a href="#!">Help</a>
                 </h6>
               </div>
-              <!-- Grid column -->
-
-              <!-- Grid column -->
               <div class="col-md-2 mb-3">
                 <h6 class="text-uppercase font-weight-bold font-2">
                   <a href="#!">Contact</a>
                 </h6>
               </div>
-              <!-- Grid column -->
-
             </div>
-            <!-- Grid row-->
             <hr class="rgba-white-light" style="margin: 0 15%;">
-
-            <!-- Grid row-->
             <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-
-              <!-- Grid column -->
               <div class="col-md-8 col-12 mt-5">
                 <p style="line-height: 1.7rem" class="footer-para">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque laudantium, totam rem
@@ -386,66 +324,48 @@
                   explicabo.
                   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
               </div>
-              <!-- Grid column -->
-
             </div>
-            <!-- Grid row-->
             <hr class="" style="margin: 10% 15% 5%; border-top: 1px solid #116d9091 !important;">
-
-            <!-- Grid row-->
             <div class="row pb-3">
-
-              <!-- Grid column -->
               <div class="col-md-12">
 
-                <div class="mb-5 d-flex justify-content-around footer-social">
-
-                  <!-- Facebook -->
-                  <a class="ic">
-                    <img src="./assets/images/icons8-facebook_200_footer.png" alt="">
-                  </a>
-                  <!-- Twitter -->
-                  <a class="ic">
-                    <img src="./assets/images/icons8-instagram_200_footer.png" alt="">
-                  </a>
-                  <!-- Google +-->
-                  <a class="ic">
-                    <img src="./assets/images/icons8-linkedin_200_footer.png" alt="">
-                  </a>
-                  <!--Linkedin -->
-                  <a class="ic">
-                    <img src="./assets/images/icons8-github_200_footer.png" alt="">
-                  </a>
-                  <!--Instagram-->
-                  <a class="ic">
-                    <img src="./assets/images/icons8-google-plus-circled_100_footer.png" alt="">
-                  </a>
-
+                <div class="mb-5  d-flex justify-content-around footer-social">
+                  <div class="col">
+                    <a class="ic">
+                      <img src="./assets/images/icons8-facebook_200_footer.png" alt="">
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="ic">
+                      <img src="./assets/images/icons8-instagram_200_footer.png" alt="">
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="ic">
+                      <img src="./assets/images/icons8-linkedin_200_footer.png" alt="">
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="ic">
+                      <img src="./assets/images/icons8-github_200_footer.png" alt="">
+                    </a>
+                  </div>
+                  <div class="col">
+                    <a class="ic">
+                      <img src="./assets/images/icons8-google-plus-circled_100_footer.png" alt="">
+                    </a>
+                  </div>
                 </div>
-
               </div>
-              <!-- Grid column -->
-
             </div>
-            <!-- Grid row-->
-
           </div>
-          <!-- Footer Links -->
-
-          <!-- Copyright -->
           <div class="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
           </div>
-          <!-- Copyright -->
 
         </footer>
 <!-- Footer -->
       </mat-card>
     </div>
-    <!-- <div class="col-9 mx-auto  d-flex text-white fixed-bottom full-width">
-      <div class="footer mx-auto text-muted ">
-        Copy Right @ PappuGang.com
-      </div>
-    </div> -->
   </div>
 </div>

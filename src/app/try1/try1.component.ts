@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-try1',
   templateUrl: './try1.component.html',
-  styleUrls: ['./try1.component.css']
+  styleUrls: ['./try1.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class Try1Component implements OnInit {
   wid = 500
   customOptions: OwlOptions = {
-    margin:20,
+    margin:35,
     autoplayHoverPause:true,
     loop: true,
     mouseDrag: true,

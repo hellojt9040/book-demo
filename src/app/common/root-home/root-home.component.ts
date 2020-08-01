@@ -12,12 +12,12 @@ declare var jarallax: any;
   ]
 })
 export class RootHomeComponent implements OnInit, AfterViewInit {
-  hideNavigation = false
+  mobView = false
 
   constructor() { }
 
   ngOnInit(){
-    var x = window.matchMedia("(min-width: 700px)")
+    var x = window.matchMedia("(min-width: 576px)")
     this.myFunction(x) // Call listener function at run time
     x.addListener(this.myFunction) // Attach listener function on state changes
   }
@@ -30,10 +30,13 @@ export class RootHomeComponent implements OnInit, AfterViewInit {
 
   myFunction(x) {
     if (x.matches) { // If media query matches
-      this.hideNavigation = false
+      this.mobView = false
+      console.log('not mob');
+
 
     } else {
-      this.hideNavigation = true
+      console.log('mob');
+      this.mobView = true
     }
   }
 

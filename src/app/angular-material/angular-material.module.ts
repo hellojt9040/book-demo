@@ -9,7 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [],
@@ -24,6 +25,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatCardModule,
     MatGridListModule,
     MatMenuModule,
+    MatTooltipModule,
+    MatBadgeModule
   ]
 })
 export class AngularMaterialModule { }

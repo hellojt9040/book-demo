@@ -74,7 +74,7 @@
 }
 
 .root-contents > mat-card{
-  background-image: linear-gradient(#094e5300, #005e5a, #0a2d2b);
+  background-image: linear-gradient(white, #094e5300, #005e5a, #0a2d2b);
 }
 
 .slider-title{
@@ -88,7 +88,7 @@
 
 .font-weight-bold.bold-header{
   color: deepskyblue;
-  font-size: 3rem;
+  font-size: 2.7rem;
 }
 
 .let-go-button{
@@ -139,12 +139,12 @@
 }
 
 .jarallax.jarallax-background{
-  background-attachment: fixed; background-size: cover; min-height: 700px;height: 700px;
+  background-attachment: fixed; background-size: cover; min-height: 700px;
 }
 
 @media screen and (max-width: 768px) {
   .no-small-display {
-    display: none;
+    display: none !important;
   }
   .full-width{
     flex: 0 0 100%;

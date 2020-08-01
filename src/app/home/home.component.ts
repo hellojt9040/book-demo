@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   bounceInDownOnEnterAnimation,
   slideOutRightOnLeaveAnimation,
+  fadeInRightBigAnimation,
 } from 'angular-animations';
 
 @Component({
@@ -13,7 +14,8 @@ import {
   animations: [
     fade,
     bounceInDownOnEnterAnimation(),
-    slideOutRightOnLeaveAnimation()
+    slideOutRightOnLeaveAnimation(),
+    fadeInRightBigAnimation()
   ]
 })
 export class HomeComponent implements OnInit {

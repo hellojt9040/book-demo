@@ -176,6 +176,13 @@
 
 }
 
+
+@media screen and (max-width: 576px) {
+  .root-contents{
+    margin-top: 12rem;
+  }
+}
+
 mat-card > img{
   height: 20rem;
 }

@@ -37,17 +37,24 @@
           matTooltip="Wishlist this" class="wish-list-icon">turned_in</mat-icon>
           <img class="h-100" [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
         </div>
-        <div class="h-30 d-flex justify-content-between flex-wrap py-1">
-          <div class="pl-1 d-flex flex-column justify-content-between flex-wrap col-6">
-            <p class="des-title mb-1">
+        <div class="h-30 py-1">
+          <div class="d-flex justify-content-between flex-wrap col-12 px-1">
+            <p class="des-title">
               {{slide.description}}
             </p>
-            <p class="des-body mb-1">
+            <p class="des-body">
               <mat-icon class="add-cart-icon">add_circle</mat-icon>
             </p>
           </div>
-          <div class="pr-1 col-6 ">
-            {{slide.sem}}
+          <div class="d-flex justify-content-between flex-wrap col-12 px-1">
+            <!-- {{slide.sem}} -->
+            <p class="mb-1 text-right">
+              {{slide.sem}}
+            </p>
+            <p class="des-body mb-1 text-right">
+             <!--  <mat-icon class="add-cart-icon">add_circle</mat-icon> -->
+             <span class="org-price text-muted">120</span><span class="our-price pl-1">{{110 | currency:'INR':'symbol':'1.0'}}</span>
+            </p>
 
           </div>
         </div>

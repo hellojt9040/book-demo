@@ -5,11 +5,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './common/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RootHomeComponent } from './common/root-home/root-home.component';
 import { TryComponent } from './try/try.component';
 import { Try1Component } from './try1/try1.component';
+import { HomeComponent } from './home/home.component';
+import { RootHomeComponent } from './root-home/root-home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { Try1Component } from './try1/try1.component';
 
     //angular material module
     AngularMaterialModule,
-    CarouselModule 
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

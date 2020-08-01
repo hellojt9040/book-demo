@@ -31,6 +31,16 @@
   font-weight: 600;
 }
 
+.org-price{
+  text-decoration: line-through red;
+
+}
+
+.our-price{
+  font-size: 1.3rem;
+  color: #007b74;
+}
+
 .add-cart-icon{
   color: #007b74;
 }

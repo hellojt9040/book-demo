@@ -49,7 +49,7 @@
           <img src="./assets/images/helloJT.png" alt="Logo" style="width:40px;"/>
           <div class="text-header row ml-2">
             <p class="my-auto">
-              My Books
+              ମୋBooks
             </p></div>
         </a>
       </div>
@@ -141,15 +141,41 @@
         </div>
 
         <div class="my-5 mx-2">
-          <div >
-            <p class="slider-title font-weight-bold">Choose by Semester</p>
+          <div class="d-flex justify-content-around">
+            <div class="col-6 px-0 d-flex flex-wrap align-content-center">
+              <div class="option-header row mx-0 col-12">
+                <p class="slider-title my-auto font-weight-bold">Choose by Semester</p>
+              </div>
+            </div>
+            <div class="col-6 px-0 d-flex justify-content-end">
+              <mat-form-field appearance="fill" class="px-0" [class.col-12]="mobView"> <!-- appearance="fill" -->
+                <mat-label>Semester</mat-label>
+                <mat-select [(value)]="selectedSem" panelClass="example-panel">
+                  <mat-option>select</mat-option>
+                  <mat-option [value]="option.value" *ngFor="let option of sems">{{ option.viewValue }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
           </div>
           <app-try1></app-try1>
         </div>
 
         <div class="my-4 mx-2">
-          <div >
-            <p class="slider-title font-weight-bold">Choose by Publication</p>
+          <div class="d-flex justify-content-around">
+            <div class="col-6 px-0 d-flex flex-wrap align-content-center">
+              <div class="option-header row mx-0 col-12">
+                <p class="slider-title my-auto font-weight-bold">Choose by Branch</p>
+              </div>
+            </div>
+            <div class="col-6 px-0 d-flex justify-content-end">
+              <mat-form-field appearance="fill" class="px-0" [class.col-12]="mobView"> <!-- appearance="fill" -->
+                <mat-label>Branch</mat-label>
+                <mat-select [(value)]="selectedBranch" panelClass="example-panel">
+                  <mat-option>select</mat-option>
+                  <mat-option [value]="option.value" *ngFor="let option of branchs">{{ option.viewValue }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
           </div>
           <app-try1></app-try1>
         </div>
@@ -290,28 +316,28 @@
           <div class="container">
             <div class="row text-center d-flex justify-content-center pt-5 mb-3">
               <div class="col-md-2 mb-3">
-                <h6 class="text-uppercase font-weight-bold font-2">
-                  <a href="#!">About us</a>
+                <h6 class="font-weight-bold">
+                  <a href="#!" class="text-uppercase">About us</a>
                 </h6>
               </div>
               <div class="col-md-2 mb-3">
-                <h6 class="text-uppercase font-weight-bold font-2">
-                  <a href="#!">Products</a>
+                <h6 class="font-weight-bold">
+                  <a href="#!" class="text-uppercase">Products</a>
                 </h6>
               </div>
               <div class="col-md-2 mb-3">
-                <h6 class="text-uppercase font-weight-bold font-2">
-                  <a href="#!">Awards</a>
+                <h6 class="font-weight-bold">
+                  <a href="#!" class="text-uppercase">Awards</a>
                 </h6>
               </div>
               <div class="col-md-2 mb-3">
-                <h6 class="text-uppercase font-weight-bold font-2">
-                  <a href="#!">Help</a>
+                <h6 class="font-weight-bold">
+                  <a href="#!" class="text-uppercase">Help</a>
                 </h6>
               </div>
               <div class="col-md-2 mb-3">
-                <h6 class="text-uppercase font-weight-bold font-2">
-                  <a href="#!">Contact</a>
+                <h6 class="font-weight-bold">
+                  <a href="#!" class="text-uppercase">Contact</a>
                 </h6>
               </div>
             </div>
@@ -326,43 +352,43 @@
               </div>
             </div>
             <hr class="" style="margin: 10% 15% 5%; border-top: 1px solid #116d9091 !important;">
-            <div class="row pb-3">
+            <div class="">
               <div class="col-md-12">
 
                 <div class="mb-5  d-flex justify-content-around footer-social">
-                  <div class="col">
+                  <div class="">
                     <a class="ic">
                       <img src="./assets/images/icons8-facebook_200_footer.png" alt="">
                     </a>
                   </div>
-                  <div class="col">
+                  <div class="">
                     <a class="ic">
                       <img src="./assets/images/icons8-instagram_200_footer.png" alt="">
                     </a>
                   </div>
-                  <div class="col">
+                  <div class="">
                     <a class="ic">
                       <img src="./assets/images/icons8-linkedin_200_footer.png" alt="">
                     </a>
                   </div>
-                  <div class="col">
+                  <div class="">
                     <a class="ic">
                       <img src="./assets/images/icons8-github_200_footer.png" alt="">
                     </a>
                   </div>
-                  <div class="col">
+                  <div class="">
                     <a class="ic">
                       <img src="./assets/images/icons8-google-plus-circled_100_footer.png" alt="">
                     </a>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
           <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+            <a href="#"> ମୋBooks.com.com</a>
           </div>
-
         </footer>
 <!-- Footer -->
       </mat-card>

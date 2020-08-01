@@ -1,5 +1,6 @@
+import { fade } from './../common/animations/animations';
 import { Component, OnInit } from '@angular/core';
-import { fade } from '../animations/animations';
+
 import {
   bounceInDownOnEnterAnimation,
   slideOutRightOnLeaveAnimation,

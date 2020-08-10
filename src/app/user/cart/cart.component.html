@@ -1,0 +1,371 @@
+<div>
+  <div class="container-fluid px-0 sticky-top bottom-shadow">
+    <book-header class="col-12 px-0"></book-header>
+  </div>
+  <div class="web-view">
+    <div class="container-fluid row mx-auto pr-0 ">
+      <div class="col-8  px-0 my-2">
+        <mat-toolbar class="px-0 d-flex justify-content-between">
+          <span class="slider-title ">Shopping Bag</span>
+          <div class="">
+            <!-- <p class="text-right">Delivering to </p> -->
+            <mat-form-field class="px-0" style="height: 2rem;"> <!-- appearance="fill" -->
+              <mat-label>Delivering to</mat-label>
+              <mat-select [(value)]="selectedAddress" panelClass="example-panel">
+                <mat-option>select</mat-option>
+                <mat-option [value]="add.name" *ngFor="let add of myAddress">{{ add.name }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-toolbar>
+        <div class="row px-0" *ngFor="let item of cartItems">
+          <div class="col-3 p-3">
+            <div class="product-img-container">
+              <img class="product-img one-edge-shadow" [src]="item.image" alt="">
+            </div>
+          </div>
+          <div class="col-6 p-3">
+            <div class="product-details-container">
+              <p class="prod-name">{{item.productName}}</p>
+              <p>{{item.publication}}</p>
+              <p>{{item.sem}}</p>
+              <p class="row item-price">
+                <span class="our-price">{{item.ourPrice | currency:'INR':'symbol':'1.0'}}</span>
+                <span>&nbsp;&#124;&nbsp;</span>
+                <span class="actual-price">{{item.actualPrice}}</span>
+              </p>
+              <div class="my-2">
+                <button mat-raised-button class="mr-2 theme-shadow prod-name">Remove</button>
+                <button mat-raised-button class="theme-shadow prod-name">Buy later</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 p-3 d-flex flex-wrap flex-column justify-content-around">
+            <div class="mx-auto">
+              <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+                <mat-icon>add_circle</mat-icon>
+              </button>
+              <span class="prod-name">{{item.quantity}}</span>
+              <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
+                <mat-icon>remove_circle</mat-icon>
+              </button>
+            </div>
+            <div class="mx-auto">
+              <p class="text-left prod-name">{{item.total | currency:'INR':'symbol':'1.0'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 my-4">
+        <div class="col-12 bg-theme rounded sticky-top">
+          <mat-toolbar class="px-0 bg-theme border-contrast-btm ">
+            <span class="contrast-text">Summary</span>
+          </mat-toolbar>
+          <div class="col-12 my-3">
+            <div class="row contrast-text promo-code my-2">
+              <mat-icon class="my-auto">local_offer</mat-icon>
+              <mat-form-field class="mx-2 control-full-width ">
+                <mat-label>HAVE A PROMOCODE ?</mat-label>
+                <input matInput style="color: #0ac2b8;" class="text-uppercase" autocomplete="off" (keyup.enter)="openSnackBar()">
+              </mat-form-field>
+              <span>
+                <button mat-raised-button class="prod-name" (click)="openSnackBar()">Apply</button>
+
+              </span>
+            </div>
+            <div class="col-12 px-0">
+              <div class="d-flex justify-content-between contrast-text py-1" *ngFor="let item of cartItems">
+                <span >{{item.productName}}</span>
+                <span class="font-weight-bold">{{item.total}}</span>
+              </div>
+            </div>
+            <div class="col-12 px-0">
+              <div class="d-flex justify-content-between contrast-text py-1" *ngFor="let c of charges">
+                <span >{{c.name}}</span>
+                <span class="font-weight-bold">
+                  <span class="text-offer font-weight-lighter small">
+                    <span *ngIf="!c.use">&#8722;</span><span *ngIf="c.use">	&#43;</span>
+                    &#37;{{c.percentage}}&nbsp;</span>
+                  {{c.value}}
+                </span>
+              </div>
+            </div>
+            <div class="col-12 px-0 py-2">
+              <div class="d-flex justify-content-between contrast-text py-1 text-offer font-weight-bold">
+                <span>Order Total</span>
+                <span>{{orderTotal | currency:'INR':'symbol':'1.0'}}</span>
+              </div>
+              <button mat-raised-button class="my-1 col-12  prod-name">Checkout</button>
+              <div class="col-12 d-flex justify-content-center font-weight-bold">
+                <span class="pay-mode mx-2">
+                  <img src="./assets/images/pay.svg" alt="">
+                </span>
+                <span class="pay-mode mx-2">
+                  <img src="./assets/images/icons8-paytm-org.svg" alt="">
+                </span>
+                <span class="pay-mode mx-2">
+                  <img src="./assets/images/icons8-bhim-upi-52.png" alt="">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 d-flex text-muted">
+          <div class="">
+            <mat-icon>verified_user</mat-icon>
+          </div>
+          <div class="">
+            <span>
+              Safe and Secure Payments.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid row mx-auto ">
+      <div class="col-8  px-0 my-2">
+        <mat-toolbar class="px-0 option-header">
+          <span class="px-1 slider-title contrast-text">Buy Later</span>
+        </mat-toolbar>
+        <div class="row px-0" *ngFor="let item of cartItems">
+          <div class="col-3 p-3">
+            <div class="product-img-container">
+              <img class="product-img one-edge-shadow" [src]="item.image" alt="">
+            </div>
+          </div>
+          <div class="col-7 p-3">
+            <div class="product-details-container">
+              <p class="prod-name">{{item.productName}}</p>
+              <p>{{item.publication}}</p>
+              <p>{{item.sem}}</p>
+              <p class="row item-price">
+                <span class="our-price">{{item.ourPrice | currency:'INR':'symbol':'1.0'}}</span>
+                <span>&nbsp;&#124;&nbsp;</span>
+                <span class="actual-price">{{item.actualPrice}}</span>
+              </p>
+              <div class="my-2">
+                <button mat-raised-button class="mr-2 theme-shadow prod-name">Remove</button>
+                <button mat-raised-button class="theme-shadow prod-name">Move to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mob-view">
+    <div class="container-fluid">
+      <div class="my-2 " >
+        <mat-toolbar class="px-0 d-flex justify-content-between" id="bag">
+          <span class="slider-title ">Shopping Bag</span>
+          <div class="">
+            <mat-form-field class="px-0 del-mob"> <!-- appearance="fill" -->
+              <mat-label>Delivering to</mat-label>
+              <mat-select [(value)]="selectedAddress" panelClass="example-panel">
+                <mat-option>select</mat-option>
+                <mat-option [value]="add.name" *ngFor="let add of myAddress">{{ add.name }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-toolbar>
+      </div>
+      <div class="cart-items my-4">
+        <mat-card *ngFor="let item of cartItems" class="my-2 mat-elevation-z6">
+          <div class="row px-0" >
+            <div class="col-3 p-2">
+              <div class="product-img-container">
+                <img class="product-img one-edge-shadow" [src]="item.image" alt="">
+              </div>
+            </div>
+            <div class="col-5 py-2 px-3">
+              <div class="product-details-container">
+                <p class="prod-name">{{item.productName}}</p>
+                <p>{{item.publication}}</p>
+                <p>{{item.sem}}</p>
+                <p class="row item-price">
+                  <span class="our-price">{{item.ourPrice | currency:'INR':'symbol':'1.0'}}</span>
+                  <span>&nbsp;&#124;&nbsp;</span>
+                  <span class="actual-price">{{item.actualPrice}}</span>
+                </p>
+              </div>
+            </div>
+            <div class="col-4 p-2 d-flex flex-wrap flex-column justify-content-around">
+              <div class="mx-auto row">
+                <mat-icon class="rounded-left border text-white btn-theme">add</mat-icon>
+                <div class="px-1 text-center border-theme prod-name">{{item.quantity}}</div>
+                <mat-icon class="rounded-right border text-white btn-theme">remove</mat-icon>
+              </div>
+              <div class="mx-auto">
+                <p class="text-left prod-name">{{item.total | currency:'INR':'symbol':'1.0'}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row text-muted">
+            <div class="col">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center">
+                  <mat-icon class="">watch_later</mat-icon>
+                </div>
+                <span>
+                  Buy later
+                </span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center">
+                  <mat-icon class="">delete_forever</mat-icon>
+                </div>
+                <span>
+                  Remove
+                </span>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div class="my-4" id="summary">
+        <div class="col-12 bg-theme rounded">
+          <mat-toolbar class="px-0 bg-theme border-contrast-btm ">
+            <span class="contrast-text">Summary</span>
+          </mat-toolbar>
+          <div class="col-12 my-3">
+            <div class="row contrast-text promo-code my-2">
+              <mat-icon class="my-auto">local_offer</mat-icon>
+              <mat-form-field class="mx-2 control-full-width ">
+                <mat-label>HAVE A PROMOCODE ?</mat-label>
+                <input matInput style="color: #0ac2b8;" class="text-uppercase" autocomplete="off" (keyup.enter)="openSnackBar()">
+              </mat-form-field>
+              <span>
+                <button mat-raised-button class="prod-name" (click)="openSnackBar()">Apply</button>
+
+              </span>
+            </div>
+            <div class="col-12 px-0">
+              <div class="d-flex justify-content-between contrast-text py-1" *ngFor="let item of cartItems">
+                <span >{{item.productName}}</span>
+                <span class="font-weight-bold">{{item.total}}</span>
+              </div>
+            </div>
+            <div class="col-12 px-0">
+              <div class="d-flex justify-content-between contrast-text py-1" *ngFor="let c of charges">
+                <span >{{c.name}}</span>
+                <span class="font-weight-bold">
+                  <span class="text-offer font-weight-lighter small">
+                    <span *ngIf="!c.use">&#8722;</span><span *ngIf="c.use">	&#43;</span>
+                    &#37;{{c.percentage}}&nbsp;</span>
+                  {{c.value}}
+                </span>
+              </div>
+            </div>
+            <div class="col-12 px-0 py-2">
+              <div class="d-flex justify-content-between contrast-text py-1 text-offer font-weight-bold">
+                <span>Order Total</span>
+                <span>{{orderTotal | currency:'INR':'symbol':'1.0'}}</span>
+              </div>
+              <button mat-raised-button class="my-1 col-12  prod-name">Checkout</button>
+              <div class="col-12 d-flex justify-content-center font-weight-bold">
+                <span class="pay-mode mx-2">
+                  <img src="./assets/images/pay.svg" alt="">
+                </span>
+                <span class="pay-mode mx-2">
+                  <img src="./assets/images/icons8-paytm-org.svg" alt="">
+                </span>
+                <span class="pay-mode mx-2">
+                  <img src="./assets/images/icons8-bhim-upi-52.png" alt="">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 d-flex text-muted">
+          <div class="">
+            <mat-icon>verified_user</mat-icon>
+          </div>
+          <div class="">
+            <span>
+              Safe and Secure Payments.
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="d-flex ">
+        <div class="">
+          <button mat-raised-button class="theme-shadow bg-theme text-white">Order</button>
+        </div>
+        <div class="ml-auto">
+          <p class="prod-name font-weight-bold m-0">{{orderTotal | currency:'INR':'symbol':'1.0'}}</p>
+          <p class="small text-offer">View details...</p>
+        </div>
+      </div> -->
+    </div>
+    <div class="container-fluid fixed-bottom bg-theme top-shadow" (click)="scrollTo('summary')">
+      <div class="d-flex pt-1">
+        <div class="">
+          <button mat-raised-button class="prod-name">Order</button>
+        </div>
+        <div class="ml-auto">
+          <p class="text-offer font-weight-bold m-0">{{orderTotal | currency:'INR':'symbol':'1.0'}}</p>
+          <p class="small text-white m-0">View details...</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid pb-5">
+      <div class="my-2 ">
+        <mat-toolbar class="px-0 d-flex justify-content-between option-header" href="#collapseLater" data-toggle="collapse">
+          <span class="p-1 contrast-text">Buy Later</span>
+          <span>
+            <mat-icon class="prod-name" >keyboard_arrow_down</mat-icon>
+          </span>
+        </mat-toolbar>
+      </div>
+      <div class="cart-items my-4 collapse" id="collapseLater">
+        <mat-card *ngFor="let item of cartItems" class="my-2 mat-elevation-z6">
+          <div class="row px-0" >
+            <div class="col-3 p-2">
+              <div class="product-img-container">
+                <img class="product-img one-edge-shadow" [src]="item.image" alt="">
+              </div>
+            </div>
+            <div class="col-9 p-3">
+              <div class="product-details-container">
+                <p class="prod-name">{{item.productName}}</p>
+                <p>{{item.publication}}</p>
+                <p>{{item.sem}}</p>
+                <p class="row item-price">
+                  <span class="our-price">{{item.ourPrice | currency:'INR':'symbol':'1.0'}}</span>
+                  <span>&nbsp;&#124;&nbsp;</span>
+                  <span class="actual-price">{{item.actualPrice}}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row text-muted">
+            <div class="col">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center">
+                  <mat-icon class="">settings_backup_restore</mat-icon>
+                </div>
+                <span>
+                  Move to cart
+                </span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center">
+                  <mat-icon class="">delete_forever</mat-icon>
+                </div>
+                <span>
+                  Remove
+                </span>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+</div>

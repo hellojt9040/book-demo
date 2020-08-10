@@ -1,0 +1,109 @@
+  <div class="header-bg d-flex justify-content-between sticky-top"
+       [class.flex-column]="mobView"
+       [class.header-bg-mob]="mobView">
+    <div class="col py-1">
+      <a class="text-white d-flex flex-wrap" href="">
+        <img src="./assets/images/helloJT.png" alt="Logo" style="width:40px;"/>
+        <div class="text-header row ml-2">
+          <p class="my-auto">
+            ମୋBooks
+          </p></div>
+      </a>
+    </div>
+
+    <div class="text-center text-white col d-flex justify-content-center" *ngIf="!mobView">
+      <button mat-button data-toggle="collapse" data-target="#search_bar">
+        <mat-icon class="text-header search-hover">search</mat-icon>
+      </button>
+      <div id="search_bar" class="collapse search-bar-open">
+        <input id="search" type="text" autocomplete="off" placeholder="Type Keywords">
+        <div class="icon-wrap">
+          <mat-icon class="text-header mx-auto">search</mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="col py-1">
+      <div class="d-flex justify-content-end" *ngIf="!mobView">
+        <div class="text-center text-white">
+          <button mat-button>
+            <mat-icon matBadge="15" matBadgeColor="warn" mat-raised-button matTooltipClass="tooltip-green"
+                      matTooltip="My wishlist" class="text-header">
+                      bookmarks
+            </mat-icon>
+          </button>
+        </div>
+        <div class="text-center">
+          <button mat-button>
+            <mat-icon matBadge="15" matBadgeColor="warn" routerLink="/user/cart" class="text-header">
+              shopping_cart
+            </mat-icon>
+          </button>
+        </div>
+        <div class="text-center text-white">
+          <button mat-button *ngIf="!userLoggedIn" (click)="openLoginModal()">
+            <mat-icon  class="text-header">person</mat-icon>
+          </button>
+          <button *ngIf="userLoggedIn" mat-icon-button [matMenuTriggerFor]="menu" class="text-header">
+            <mat-icon>how_to_reg</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="custom-menu">
+            <button mat-menu-item [routerLink]="['/auth']">
+              <mat-icon class="header-menu-theme-icon">assignment_ind</mat-icon>
+              <span class="header-menu-theme-item">Me</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="header-menu-theme-icon">shopping_basket</mat-icon>
+              <span class="header-menu-theme-item">My Orders</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="header-menu-theme-icon">notifications_active</mat-icon>
+              <span class="header-menu-theme-item">Notification</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="header-menu-theme-icon">live_help</mat-icon>
+              <span class="header-menu-theme-item">Help</span>
+            </button>
+          </mat-menu>
+
+        </div>
+      </div>
+      <div *ngIf="mobView" class="">
+        <div class="d-flex justify-content-around ">
+          <button mat-button class="px-0 text-header" routerLink="/user/cart">
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+          <button mat-button class="px-0" data-toggle="collapse" data-target="#search_bar">
+            <mat-icon class="text-header search-hover">search</mat-icon>
+          </button>
+          <div id="search_bar" class="collapse search-bar-open w-100">
+            <input id="search" type="text" autocomplete="off" placeholder="Type Keywords">
+            <div class="icon-wrap">
+              <mat-icon class="text-header mx-auto">search</mat-icon>
+            </div>
+          </div>
+        <button mat-button class="px-0" (click)="openNav()">
+          <mat-icon class="text-header">menu_open</mat-icon>
+        </button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <div *ngIf="userLoggedIn">
+      <a>Me</a>
+      <a href="#">My Orders</a>
+      <a href="#">Notification</a>
+      <a href="#">Wishlist</a>
+    </div>
+    <div *ngIf="!userLoggedIn">
+      <a (click)="openLoginModal()">Login</a>
+      <a routerLink="/auth">Signup</a>
+    </div>
+    <a href="#">Help</a>
+  </div>

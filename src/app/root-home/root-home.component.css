@@ -5,6 +5,7 @@
 .mat-option-text{
   color: #00ccc1;
   font-weight: 900;
+  transition: all .2s ease-out, color .2s ease-out;
 }
 
 .mat-option-text:hover{
@@ -17,58 +18,11 @@
   height: 2.5rem;
 }
 
+.sticky-top{
+  z-index: 999 !important;
+}
+
 /* Make the image fully responsive */
-.text-header{
-  font-size: 1.5rem;
-  color: #0ac2b8;
-  transition: all .2s ease-out, color .2s ease-out;
-}
-
-.search-hover:hover{
-  font-size: 2rem;
-  color: #ffc107;
-}
-
-[aria-expanded=true] .search-hover{
-  color: #ffc107;
-}
-
-.search-bar-open{
-  position: absolute;
-  margin-top: 4rem;
-  width: 200%;
-}
-
-.search-bar-open input{
-  border: 0;
-    width: 100%;
-    padding-left: 5pt;
-    background: #005e5a;
-    background-image: linear-gradient(to right,#094e53a6, #041f1e, #094e53a6);
-    font-size: 18px;
-    color: white;
-    border-radius: 3px;
-    height: 40px;
-    outline: 0px;
-}
-
-.search-bar-open input::placeholder{
-  color: #0ac2b8;
-}
-
-.icon-wrap{
-  position: absolute;
-    top: 0;
-    right: 0;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 60px;
-    height: 100%;
-    cursor: pointer;
-}
-
 .carousel-inner img {
   width: 100%;
   height: 100%;
@@ -112,14 +66,6 @@
 
 .let-go-button{
   font-size: 4rem;
-  color: deepskyblue;
-}
-
-.page-footer{
-  background-image: linear-gradient( #005e5acf, #0a2d2b);
-}
-
-.footer-para{
   color: deepskyblue;
 }
 
@@ -198,7 +144,7 @@ body {
   transition: background-color .5s;
 }
 
-.sidenav {
+/* .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
@@ -240,7 +186,7 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
+} */
 
 
 /* side nav styls ends */

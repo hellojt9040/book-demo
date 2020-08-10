@@ -1,0 +1,165 @@
+.option-header{
+  background-image: linear-gradient(to right, #041f1e, #0e5856, #094e53a6,#094e5300);
+}
+
+.slider-title{
+  font-size: 2rem;
+  color: #005e5a;
+}
+
+.del-mob{
+  height: 2rem;
+  width: 7rem;
+}
+
+.product-img-container{
+  height: 8rem;
+  width: 6rem;
+}
+
+.product-img{
+  height: inherit !important;
+  width: inherit !important;
+}
+
+.product-details-container p{
+  margin: 1px !important;
+}
+
+.product-details-container p:not(.prod-name){
+  color: grey;
+  font-weight: 600;
+}
+
+.prod-name{
+  font-size: 1em;
+  color: #005e5a;
+  font-weight: 700;
+}
+
+.our-price{
+  font-size: 1rem;
+  color: #005e5a;
+}
+
+.actual-price{
+  text-decoration: line-through red;
+}
+
+.theme-shadow{
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+   0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+   0px 1px 5px 0px #005e5a !important;
+}
+
+.one-edge-shadow{
+  box-shadow: 0 8px 6px -5px #005e5a;
+}
+
+.top-shadow{
+  -webkit-box-shadow: 0px -3px 20px 0px rgba(0,94,90,1);
+  -moz-box-shadow: 0px -3px 20px 0px rgba(0,94,90,1);
+  box-shadow: 0px -3px 20px 0px rgba(0,94,90,1);
+}
+
+.bottom-shadow{
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(0,94,90,1);
+  -moz-box-shadow: 0px 5px 20px 0px rgba(0,94,90,1);
+  box-shadow: 0px 5px 20px 0px rgba(0,94,90,1);
+}
+
+.bg-theme{
+  background-color:#005e5a;
+}
+
+.contrast-text{
+  color: #0ac2b8;
+}
+
+.border-contrast-btm{
+  border-bottom: 2px solid #0ac2b8;
+}
+
+.promo-code{
+  cursor: pointer;
+}
+
+.text-offer{
+  color: #ffc107;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: #0ac2b8;
+}
+
+.mat-form-field-label{
+  color:#0ac2b8 !important;
+}
+
+.mat-form-field-underline{
+  background-color:#0ac2b8 !important;
+}
+
+.pay-mode img{
+  height: 1.7rem;
+}
+
+.example-panel.mat-select-panel{
+  background-color: #005e5ad4;
+}
+
+.mat-option-text{
+  color: #00ccc1;
+  font-weight: 400;
+  transition: all .2s ease-out, color .2s ease-out;
+}
+
+.mat-option-text:hover{
+  color: #ffc107;
+  font-size: 1rem;
+}
+
+.mat-select-panel .mat-option{
+  height: 2em !important;
+}
+
+.btn-theme{
+  background-color: #005e5a;
+  border: 1px solid #005e5a !important;
+}
+
+.border-theme{
+  border-top: 1px solid #005e5a;
+  border-bottom: 1px solid #005e5a;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex{
+  padding: 0px !important;
+
+}
+
+@media screen and (max-width: 576px) {
+  .web-view{
+    display: none;
+  }
+
+  .product-img-container{
+    height: 6rem;
+    width: 4.5rem;
+  }
+
+  .slider-title{
+    font-size: 1.5rem;
+    color: #005e5a;
+  }
+
+  .mat-snack-bar-handset .mat-snack-bar-container {
+    margin-bottom: 4rem !important;
+  }
+}
+
+@media screen and (min-width: 577px) {
+  .mob-view{
+    display: none;
+  }
+}

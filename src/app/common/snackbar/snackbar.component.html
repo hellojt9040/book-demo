@@ -1,0 +1,12 @@
+<span class="d-flex justify-content-between">
+  <span class="my-auto">
+    {{data['message']}}
+  </span>
+  <span class="status">
+    <success-svg *ngIf="data.isSuccess"></success-svg>
+    <failure-svg *ngIf="!data.isSuccess"></failure-svg>
+  </span>
+
+</span>
+
+

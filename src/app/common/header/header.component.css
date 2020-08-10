@@ -1,0 +1,140 @@
+*{
+  outline: 0px !important;
+}
+
+.sticky-top{
+  z-index: 999 !important;
+}
+
+.header-bg{
+  background-image: linear-gradient(to right,#094e53eb, #041f1e, #094e53eb);
+}
+
+.header-bg-mob{
+  background-image: linear-gradient(to right,#094e53, #041f1e, #094e53);
+}
+
+.text-header{
+  font-size: 1.5rem;
+  color: #0ac2b8;
+  transition: all .2s ease-out, color .2s ease-out;
+}
+
+.search-hover:hover{
+  font-size: 2rem;
+  color: #ffc107;
+}
+
+[aria-expanded=true] .search-hover{
+  color: #ffc107;
+}
+
+.search-bar-open{
+  position: absolute;
+  margin-top: 4rem;
+  width: 200%;
+}
+
+.search-bar-open input{
+  border: 0;
+    width: 100%;
+    padding-left: 5pt;
+    background: #005e5a;
+    background-image: linear-gradient(to right,#094e53a6, #041f1e, #094e53a6);
+    font-size: 18px;
+    color: white;
+    border-radius: 3px;
+    height: 40px;
+    outline: 0px;
+}
+
+.search-bar-open input::placeholder{
+  color: #0ac2b8;
+}
+
+.icon-wrap{
+  position: absolute;
+    top: 0;
+    right: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    cursor: pointer;
+}
+
+button.mat-menu-item{
+  outline: none !important;
+}
+
+.custom-menu{
+  margin-top: 10pt !important;
+  background-color: #005e5ad4;
+}
+
+.header-menu-theme-icon{
+  color: #00ccc1 !important;
+}
+
+.header-menu-theme-item{
+  color: #00ccc1;
+  transition: all .2s ease-out, color .2s ease-out;
+}
+
+.header-menu-theme-item:hover{
+  color: #ffc107;
+  font-size: 1rem;
+}
+
+.myClass .mat-dialog-container {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* side nav styls starts*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* #main {
+  transition: margin-left .5s;
+  padding: 16px;
+} */
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* side nav styls ends*/

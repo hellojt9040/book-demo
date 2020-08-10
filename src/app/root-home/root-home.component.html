@@ -1,11 +1,4 @@
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-  <a href="#">Category</a>
-  <a href="#">Me</a>
-  <a href="#">My Orders</a>
-  <a href="#">Wishlist</a>
-  <a href="#">Help</a>
-</div>
+
 
 <div class="container-fluid px-0">
 
@@ -43,7 +36,7 @@
   </div>
 
   <div class="root-nav mx-auto row col-12 mat-elevation-z6">
-    <div class="col-sm-9 mx-auto d-flex justify-content-between sticky-top" [class.flex-column]="mobView" style="background-image: linear-gradient(to right,#094e53a6, #041f1e, #094e53a6);">
+    <!-- <div class="col-sm-9 mx-auto d-flex justify-content-between sticky-top" [class.flex-column]="mobView" style="background-image: linear-gradient(to right,#094e53a6, #041f1e, #094e53a6);">
       <div class="col py-1">
         <a class="text-white d-flex flex-wrap" href="">
           <img src="./assets/images/helloJT.png" alt="Logo" style="width:40px;"/>
@@ -78,7 +71,7 @@
           </div>
           <div class="text-center">
             <button mat-button>
-              <mat-icon matBadge="15" matBadgeColor="warn" routerLink="/root" class="text-header">shopping_cart</mat-icon>
+              <mat-icon matBadge="15" matBadgeColor="warn" erLink="/root"rout class="text-header">shopping_cart</mat-icon>
             </button>
           </div>
           <div class="text-center text-white">
@@ -88,16 +81,10 @@
           </div>
         </div>
         <div *ngIf="mobView" class="my-1">
-          <!-- <div class="text-center text-white">
-
-          </div> -->
           <div class="d-flex justify-content-around ">
             <button mat-button class="px-0 text-header">
               <mat-icon>shopping_cart</mat-icon>
             </button>
-            <!-- <button mat-button class="px-0">
-              <mat-icon routerLink="/root">search</mat-icon>
-            </button> -->
             <button mat-button class="px-0" data-toggle="collapse" data-target="#search_bar">
               <mat-icon class="text-header search-hover">search</mat-icon>
             </button>
@@ -114,8 +101,11 @@
         </div>
 
       </div>
-    </div>
-    <div class="col-sm-9 mx-auto d-flex text-white root-contents ">
+    </div> -->
+
+    <book-header class="col-sm-9 mx-auto sticky-top" ></book-header>
+
+    <div class="col-sm-9 px-0 mx-auto d-flex text-white root-contents ">
       <mat-card class="col-12 px-0">
         <div class="d-flex justify-content-between mx-auto shadow py-2 rounded-lg">
           <div class="d-flex flex-wrap justify-content-center flex-coulmn col">
@@ -142,7 +132,7 @@
 
         <div class="my-5 mx-2">
           <div class="d-flex justify-content-around">
-            <div class="col-6 px-0 d-flex flex-wrap align-content-start">
+            <div class="col-6 px-0 d-flex flex-wrap align-content-start"  [routerLink]="['/user']">
               <div class="option-header mt-2 row mx-0 col-12">
                 <p class="slider-title my-auto font-weight-bold">Choose by Semester</p>
               </div>
@@ -310,87 +300,7 @@
         <!--Grid row-->
       </div>
 
-
-        <!-- Footer -->
-        <footer class="page-footer font-small indigo">
-          <div class="container">
-            <div class="row text-center d-flex justify-content-center pt-5 mb-3">
-              <div class="col-md-2 mb-3">
-                <h6 class="font-weight-bold">
-                  <a href="#!" class="text-uppercase">About us</a>
-                </h6>
-              </div>
-              <div class="col-md-2 mb-3">
-                <h6 class="font-weight-bold">
-                  <a href="#!" class="text-uppercase">Products</a>
-                </h6>
-              </div>
-              <div class="col-md-2 mb-3">
-                <h6 class="font-weight-bold">
-                  <a href="#!" class="text-uppercase">Awards</a>
-                </h6>
-              </div>
-              <div class="col-md-2 mb-3">
-                <h6 class="font-weight-bold">
-                  <a href="#!" class="text-uppercase">Help</a>
-                </h6>
-              </div>
-              <div class="col-md-2 mb-3">
-                <h6 class="font-weight-bold">
-                  <a href="#!" class="text-uppercase">Contact</a>
-                </h6>
-              </div>
-            </div>
-            <hr class="rgba-white-light" style="margin: 0 15%;">
-            <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-              <div class="col-md-8 col-12 mt-5">
-                <p style="line-height: 1.7rem" class="footer-para">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem
-                  aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                  explicabo.
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-              </div>
-            </div>
-            <hr class="" style="margin: 10% 15% 5%; border-top: 1px solid #116d9091 !important;">
-            <div class="">
-              <div class="col-md-12">
-
-                <div class="mb-5  d-flex justify-content-around footer-social">
-                  <div class="">
-                    <a class="ic">
-                      <img src="./assets/images/icons8-facebook_200_footer.png" alt="">
-                    </a>
-                  </div>
-                  <div class="">
-                    <a class="ic">
-                      <img src="./assets/images/icons8-instagram_200_footer.png" alt="">
-                    </a>
-                  </div>
-                  <div class="">
-                    <a class="ic">
-                      <img src="./assets/images/icons8-linkedin_200_footer.png" alt="">
-                    </a>
-                  </div>
-                  <div class="">
-                    <a class="ic">
-                      <img src="./assets/images/icons8-github_200_footer.png" alt="">
-                    </a>
-                  </div>
-                  <div class="">
-                    <a class="ic">
-                      <img src="./assets/images/icons8-google-plus-circled_100_footer.png" alt="">
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="#"> ମୋBooks.com.com</a>
-          </div>
-        </footer>
-<!-- Footer -->
+      <book-footer></book-footer>
       </mat-card>
     </div>
   </div>

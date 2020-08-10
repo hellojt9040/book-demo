@@ -1,0 +1,42 @@
+<div class="container-fluid px-0 h-100 theme-background d-flex flex-wrap align-content-center">
+  <div class="col-lg-4 col-md-6">
+    <mat-card class="bg-theme">
+      <div class="col-11 mx-auto px-0" autocomplete="disabled">
+        <mat-form-field class="control-full-width ">
+          <mat-label>Name</mat-label>
+          <input matInput style="color: #0ac2b8;" autocomplete="disabled">
+        </mat-form-field>
+        <mat-form-field  class="control-full-width " >
+          <mat-label >Contact</mat-label>
+          <input matInput style="color: #0ac2b8;" autocomplete="disabled">
+        </mat-form-field>
+        <mat-form-field  class="control-full-width ">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" style="color: #0ac2b8;">
+        </mat-form-field>
+        <mat-form-field  class="control-full-width ">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" style="color: #0ac2b8;">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon class="theme-text">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field  class="control-full-width ">
+          <mat-label>Confirm password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon class="theme-text">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field  class="control-full-width ">
+          <mat-label>College (optoinal)</mat-label>
+          <input matInput style="color: #0ac2b8;" autocomplete="disabled">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button class="my-3 control-full-width signup-btn fill-theme font-weight-bold ">Signup</button>
+        </div>
+      </div>
+    </mat-card>
+
+  </div>
+</div>

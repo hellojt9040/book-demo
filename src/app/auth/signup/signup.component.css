@@ -1,0 +1,36 @@
+.theme-background{
+  background-image: url('../../../assets/images/books_background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup-btn{
+  background-color: #e6ad00a1;
+  color: #003b38;
+}
+
+.bg-theme{
+  background-color: #003b38db;
+}
+
+.theme-text{
+  color: #ffc107;
+}
+
+.control-full-width {
+  width: 100%;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: #ffc107;
+}
+
+.mat-form-field-label{
+  color:#ffc107 !important;
+}
+.mat-form-field-underline{
+  background-color:#ffc107 !important;
+}
+
+

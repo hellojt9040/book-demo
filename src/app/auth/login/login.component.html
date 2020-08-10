@@ -1,0 +1,254 @@
+<div class="background-login h-100 web-view">
+  <div class="row h-100">
+    <div class="col h-100 d-flex flex-wrap align-content-around">
+      <div class="col-12 mx-auto ">
+          <img  src="./assets/images/img.png" alt="">
+      </div>
+      <div class="col-12 mx-auto ">
+        <div class="col-10 px-0 pb-4">
+          <div class="d-flex justify-content-center">
+            <span class="p-2" routerLink="/auth" (click)="dialogRef.close();">
+              <img class="registration-icon mx-auto" src="./assets/images/icons8-email-100.png" alt="">
+            </span>
+            <span class="p-2">
+              <img class="registration-icon mx-auto" src="./assets/images/icons8-facebook.svg" alt="">
+            </span>
+            <span class="p-2">
+              <img class="registration-icon mx-auto" src="./assets/images/icons8-google-plus.svg" alt="">
+            </span>
+            <span class="p-2">
+              <img class="registration-icon mx-auto" src="./assets/images/icons8-linkedin.svg" alt="">
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col mx-auto h-100 d-flex flex-wrap align-content-center">
+      <!-- <div class="col-12 mx-auto">
+        <div class="col-lg-11 px-0 mx-auto">
+          <form [formGroup]="loginForm" class="mat-form">
+            <mat-card class="p-0">
+              <mat-card class="mat-elevation-z8 mb-4">
+                <mat-card-title class="text-center login-header">Already User</mat-card-title>
+              </mat-card>
+              <div class="col-11 mx-auto ">
+                <mat-form-field appearance="fill" class="control-full-width my-3">
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput placeholder="pat@example.com" formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="control-full-width my-2">
+                  <mat-label>Enter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <button mat-raised-button class="my-3 control-full-width fill-theme font-weight-bold">Login</button>
+              </div>
+
+            </mat-card>
+          </form>
+
+        </div>
+        <p class="text-center my-1 theme-text">Forgot Password
+          <mat-icon>contact_support</mat-icon>
+        </p>
+      </div> -->
+      <div class="flip-card">
+        <div class="flip-card-inner" [class.flip]="flip">
+          <div class="flip-card-front" >
+            <form [formGroup]="loginForm" class="mat-form">
+              <mat-card class="p-0 card-height">
+                <mat-card class="mat-elevation-z8 mb-4">
+                  <mat-card-title class="text-center login-header">My Books</mat-card-title>
+                </mat-card>
+                <div class="col-11 mx-auto ">
+                  <mat-form-field appearance="fill" class="control-full-width my-3">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="email" required>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="control-full-width my-2">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <button mat-raised-button class="my-3 control-full-width fill-theme font-weight-bold">Login</button>
+                </div>
+
+              </mat-card>
+            </form>
+          </div>
+          <div class="flip-card-back" *ngIf="flip">
+            <form [formGroup]="loginForm" class="mat-form">
+              <mat-card class="p-0 card-height">
+                <mat-card class="mat-elevation-z8 mb-4">
+                  <mat-card-title class="text-center login-header">Reset Password</mat-card-title>
+                </mat-card>
+                <div class="col-11 mx-auto " *ngIf="!resetMailSent">
+                  <mat-form-field appearance="fill" class="control-full-width ">
+                    <mat-label>Registered email id</mat-label>
+                    <input matInput placeholder="pat@example.com" formControlName="email" required>
+                  </mat-form-field>
+                  <button mat-raised-button class="my-3 control-full-width fill-theme font-weight-bold" (click)="sendResetPwdEmail()">Send email</button>
+                </div>
+                <div class="col-11 mx-auto " *ngIf="resetMailSent">
+                  <mat-form-field class="control-full-width ">
+                    <mat-label>Password in your email</mat-label>
+                    <input matInput style="color: #0ac2b8;">
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="control-full-width ">
+                    <mat-label>Enter new password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="control-full-width ">
+                    <mat-label>Confirm new password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  <button mat-raised-button class="my-3 control-full-width fill-theme font-weight-bold" (click)="resetPassword()">Reset</button>
+                  <p class="text-center my-1 theme-text font-weight-bold" *ngIf="isPasswordReset">Successfully reset password ! </p>
+                </div>
+              </mat-card>
+            </form>
+          </div>
+        </div>
+      </div>
+      <p class="text-center font-weight-bold my-1 theme-text pointer" *ngIf="!flip" (click)="toggleFlip()">Forgot Password
+        <mat-icon>contact_support</mat-icon>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="mob-view h-100">
+  <div class="flip-card">
+    <div class="flip-card-inner" [class.flip]="flip">
+      <div class="flip-card-front" >
+        <div class="col-12 px-0">
+          <form [formGroup]="loginForm" class="mat-form">
+            <div class="p-0">
+              <mat-card class="mat-elevation-z8 mb-3">
+                <mat-card-title class="text-center login-header">My Books</mat-card-title>
+              </mat-card>
+              <div class="col-11 mx-auto my-1">
+                <mat-form-field appearance="fill" class="control-full-width ">
+                  <mat-label>Enter your email</mat-label>
+                  <input matInput placeholder="pat@example.com" formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="control-full-width ">
+                  <mat-label>Enter your password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <button mat-raised-button class=" control-full-width fill-theme font-weight-bold">Login</button>
+              </div>
+
+            </div>
+          </form>
+
+          <p class="text-center my-1 theme-text font-weight-bold" *ngIf="!flip" (click)="toggleFlip()">Forgot Password
+            <mat-icon class="">contact_support</mat-icon>
+          </p>
+
+          <p class="text-center my-1 theme-text">
+            <span class="">
+              <img class="registration-icon mx-2" src="./assets/images/icons8-email-100.png" alt="" routerLink="/auth" (click)="dialogRef.close();">
+              <img class="registration-icon mx-2" src="./assets/images/icons8-facebook.svg" alt="">
+              <img class="registration-icon mx-2" src="./assets/images/icons8-google-plus.svg" alt="">
+              <img class="registration-icon mx-2" src="./assets/images/icons8-linkedin.svg" alt="">
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="flip-card-back" *ngIf="flip">
+        <div class="col-12 px-0 h-100 bg-white">
+          <form [formGroup]="loginForm" class="mat-form">
+            <div class="p-0">
+              <mat-card class="mat-elevation-z8 mb-3">
+                <mat-card-title class="text-center login-header">Reset Password</mat-card-title>
+              </mat-card>
+              <div class="col-11 mx-auto " *ngIf="!resetMailSent">
+                <mat-form-field appearance="fill" class="control-full-width ">
+                  <mat-label>Registered email id</mat-label>
+                  <input matInput placeholder="pat@example.com" formControlName="email" required>
+                </mat-form-field>
+                <button mat-raised-button class="my-3 control-full-width fill-theme font-weight-bold" (click)="sendResetPwdEmail()">Send email</button>
+              </div>
+              <div class="col-11 mx-auto " *ngIf="resetMailSent">
+                <mat-form-field class="control-full-width ">
+                  <mat-label>Password in your email</mat-label>
+                  <input matInput style="color: #0ac2b8;">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="control-full-width ">
+                  <mat-label>Enter new password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="control-full-width ">
+                  <mat-label>Confirm new password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <button mat-raised-button class="control-full-width fill-theme font-weight-bold btn-sm" (click)="resetPassword()">Reset</button>
+                <p class="text-center  theme-text font-weight-bold" *ngIf="isPasswordReset">Successfully reset password ! </p>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-12 px-0">
+    <form [formGroup]="loginForm" class="mat-form">
+      <mat-card class="p-0">
+        <mat-card class="mat-elevation-z8 mb-4">
+          <mat-card-title class="text-center login-header">My Books</mat-card-title>
+        </mat-card>
+        <div class="col-11 mx-auto ">
+          <mat-form-field appearance="fill" class="control-full-width my-3">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="control-full-width my-2">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <button mat-raised-button class="my-3 control-full-width fill-theme font-weight-bold">Login</button>
+        </div>
+
+      </mat-card>
+    </form>
+
+    <p class="text-center my-1 theme-text" *ngIf="!flip" (click)="toggleFlip()">Forgot Password
+      <mat-icon>contact_support</mat-icon>
+    </p>
+
+    <p class="text-center my-1 theme-text">
+      <span class="">
+        <img class="registration-icon mx-2" src="./assets/images/icons8-email-100.png" alt="">
+        <img class="registration-icon mx-2" src="./assets/images/icons8-facebook.svg" alt="">
+        <img class="registration-icon mx-2" src="./assets/images/icons8-google-plus.svg" alt="">
+        <img class="registration-icon mx-2" src="./assets/images/icons8-linkedin.svg" alt="">
+      </span>
+    </p>
+  </div> -->
+</div>

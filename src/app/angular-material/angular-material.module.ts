@@ -12,12 +12,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule }  from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
   exports: [
     CommonModule,
-    BrowserAnimationsModule,
+    //BrowserAnimationsModule, // never exp BrowAnimatMod or BrowrModule from custom
 
     //angular material modules
     MatToolbarModule,
@@ -29,7 +33,12 @@ import { MatSelectModule } from '@angular/material/select';
     MatTooltipModule,
     MatBadgeModule,
     MatSelectModule,
-    
+    MatDialogModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+
   ]
 })
 export class AngularMaterialModule { }

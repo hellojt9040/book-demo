@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   checkProfile(){
     // chk for loggedin
 
-    if(1>0) //if loggedin
+    if(1<0) //if loggedin
       this.userLoggedIn = true
   }
 
